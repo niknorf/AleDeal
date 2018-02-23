@@ -1,0 +1,247 @@
+<ion-header>
+  <ion-navbar color="teal">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>AleDeal</ion-title>
+  </ion-navbar>
+  
+  <ion-toolbar no-border-top color="teal">
+    <ion-segment [(ngModel)]="tabs" color="white">
+      <ion-segment-button value="new">
+        What's new
+      </ion-segment-button>
+      <ion-segment-button value="kittens">
+        Popular
+      </ion-segment-button>
+      <ion-segment-button value="ducklings">
+        Local
+      </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="tabs">
+    <ion-list *ngSwitchCase="'new'">
+      <ion-card>
+        <img src="assets/imgs/promo/orange.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            K-Citynarket deals
+            </ion-card-title>
+          <p>
+            Fresh oranges
+          </p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-grid>
+        <ion-row>
+<!--           <ion-col *ngFor="let product of productsList">
+            <ion-card class="prodCard" >
+              <img src="{{pic}}"/>
+              <ion-card-header>
+                {{product?.header}}
+              </ion-card-header>
+              <ion-card-content>
+                {{product?.description}}
+              </ion-card-content>
+            </ion-card>
+          </ion-col> -->
+          <ion-col *ngFor="let product of products">
+            <ion-card class="prodCard" (click)="openModal(product.id)">
+              <img src="{{product.img}}"/>
+              <ion-card-header>
+                {{product.name}}
+              </ion-card-header>
+              <ion-card-content>
+                {{product.description}}
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card class="prodCard">
+              <img src="assets/imgs/promo/sample.png"/>
+              <ion-card-header>
+                Header
+              </ion-card-header>
+              <ion-card-content>
+                The British.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card class="prodCard">
+              <img src="assets/imgs/promo/sample.png"/>
+              <ion-card-header>
+                Header
+              </ion-card-header>
+              <ion-card-content>
+                The British.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card class="prodCard">
+              <img src="assets/imgs/promo/sample.png"/>
+              <ion-card-header>
+                Header
+              </ion-card-header>
+              <ion-card-content>
+                The British.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card class="prodCard">
+              <img src="assets/imgs/promo/sample.png"/>
+              <ion-card-header>
+                Header
+              </ion-card-header>
+              <ion-card-content>
+                The British.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card class="prodCard">
+              <img src="assets/imgs/promo/sample.png"/>
+              <ion-card-header>
+                Header
+              </ion-card-header>
+              <ion-card-content>
+                The British.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+
+      <h2 padding>Categories</h2>
+
+      <ion-card>
+        <ion-grid class="row-mar">
+          <ion-row>
+            <ion-col text-center padding-vertical class="left-icon">
+              <ion-icon name="heart"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+              <ion-card-content padding-vertical class="cat-text">
+                Groceries
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+
+            <ion-card>
+        <ion-grid class="row-mar">
+          <ion-row>
+            <ion-col text-center padding-vertical class="left-icon">
+              <ion-icon name="heart"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+              <ion-card-content padding-vertical class="cat-text">
+                Groceries
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+
+            <ion-card>
+        <ion-grid class="row-mar">
+          <ion-row>
+            <ion-col text-center padding-vertical class="left-icon">
+              <ion-icon name="heart"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+              <ion-card-content padding-vertical class="cat-text">
+                Groceries
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+
+            <ion-card>
+        <ion-grid class="row-mar">
+          <ion-row>
+            <ion-col text-center padding-vertical class="left-icon">
+              <ion-icon name="heart"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+              <ion-card-content padding-vertical class="cat-text">
+                Groceries
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+
+
+  </ion-list>
+
+    <ion-list *ngSwitchCase="'kittens'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-kitten-3.jpg">
+        </ion-thumbnail>
+        <h2>Milo</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-kitten-4.jpg">
+        </ion-thumbnail>
+        <h2>Bandit</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-kitten-2.jpg">
+        </ion-thumbnail>
+        <h2>Nala</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'ducklings'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-1.jpg">
+        </ion-thumbnail>
+        <h2>Daffy</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-2.jpg">
+        </ion-thumbnail>
+        <h2>Huey</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-3.jpg">
+        </ion-thumbnail>
+        <h2>Dewey</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-4.jpg">
+        </ion-thumbnail>
+        <h2>Louie</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
