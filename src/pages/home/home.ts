@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage, ModalController } from 'ionic-angular';
 import * as firebase from 'firebase';
 // import { ProductsProvider } from '../../providers/products/products';
-import { DataProvider } from '../../providers/data/data';
+// import { DataProvider } from '../../providers/data/data';
 
 @IonicPage()
 @Component({
@@ -20,14 +20,16 @@ export class HomePage {
 
   public products: any;
 
-  constructor(public navCtrl: NavController, public dataService: DataProvider, public modalCtrl: ModalController) {
+  // public dataService: DataProvider,
+
+  constructor(public navCtrl: NavController,  public modalCtrl: ModalController) {
   	this.prodPic = firebase.storage().ref().child('img/');
     this.prodPic.child('sample.png').getDownloadURL().then((url) => {
     this.pic = url;
 
-    this.dataService.loadAll().then(result => {
-            this.products = result;
-        });
+    // this.dataService.loadAll().then(result => {
+    //         this.products = result;
+    //     });
 
     });
 

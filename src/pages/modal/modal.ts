@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { DataProvider } from '../../providers/data/data';
+// import { DataProvider } from '../../providers/data/data';
 
 /**
  * Generated class for the ModalPage page.
@@ -17,12 +17,14 @@ import { DataProvider } from '../../providers/data/data';
 export class ModalPage {
 	products: any=0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public dataService: DataProvider) {
+	// , public dataService: DataProvider
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   	// console.log('ProductId', navParams.get('productId'));
 
-  	this.dataService.getByID(this.navParams.get('id')).then(result => {
-      this.products = result;
-    });
+  	// this.dataService.getByID(this.navParams.get('id')).then(result => {
+   //    this.products = result;
+   //  });
   }
 
   ionViewDidLoad() {
